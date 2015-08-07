@@ -125,17 +125,18 @@ public class PersistenceServiceImpl implements PersistenceProvider {
 
 		public int compare(AbstractComponent o1, AbstractComponent o2) {
 			// Handles null situations
-			if(o1.getComponentId() == null) {
-		         if(o2.getComponentId() == null)
-		            return 0; //equal
-		         else
-		            return -1; // null is before other strings
-			}
-			else {
-		         if(o2.getComponentId() == null)
-		            return 1;  // all other strings are after null
-		         else
-		            return o1.getComponentId().compareTo(o2.getComponentId());
+			if (o1.getComponentId() == null) {
+				if (o2.getComponentId() == null) {
+					return 0; // equal
+				} else {
+					return -1; // null is before other strings
+				}
+			} else {
+				if (o2.getComponentId() == null) {
+					return 1; // all other strings are after null
+				} else {
+					return o1.getComponentId().compareTo(o2.getComponentId());
+				}
 			}
 		}
 	}
